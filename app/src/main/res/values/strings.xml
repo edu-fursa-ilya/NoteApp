@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NoteApp</string>
+    <string name="create_note_activity_name">Create new note</string>
+    <string name="hint_title">Заголовок заметки</string>
+    <string name="hint_text">Текст заметки</string>
+    <string name="title_save">Сохранить заметку</string>
+    <string name="error_empty_field">Ошибка! Заполните поле</string>
 </resources>

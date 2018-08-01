@@ -16,10 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
-            android:authorities="com.noteapp.fursa.contentprovider"
             android:name=".db.NoteProvider"
-            android:exported="true"/>
+            android:authorities="com.noteapp.fursa.contentprovider"
+            android:exported="true" />
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:label="@string/create_note_activity_name"
+            android:name=".CreateNoteActivity"></activity>
     </application>
 
 </manifest>
