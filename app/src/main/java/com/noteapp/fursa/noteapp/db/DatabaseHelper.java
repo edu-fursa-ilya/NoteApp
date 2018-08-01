@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-
     public DatabaseHelper(Context c) {
         super(c, NotesContract.DB_NAME, null, NotesContract.DB_VERSION);
     }

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.LinearLayout;
 
@@ -20,10 +21,11 @@ import com.noteapp.fursa.noteapp.ui.NotesAdapter;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
+
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
-    private DividerItemDecoration dividerItemDecoration;
     private NotesAdapter adapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +34,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         insert();
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         recyclerView = (RecyclerView)findViewById(R.id.notes_rv);
         layoutManager = new LinearLayoutManager(getBaseContext());
         recyclerView.setLayoutManager(layoutManager);
-
-        dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
 
         adapter = new NotesAdapter(null);
         recyclerView.setAdapter(adapter);
@@ -85,6 +87,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-
+        Log.d(LOG_TAG, "loader reset");
     }
 }
